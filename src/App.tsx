@@ -1,6 +1,11 @@
-import { gql } from "@apollo/client"
+import { gql , useQuery} from "@apollo/client"
 import { useEffect } from "react"
+import { Header } from "./components/Header";
 import { client } from "./lib/apollo"
+import { Lesson } from "./components/Lesson";
+import { Video } from "./components/Video";
+import { Slidebar } from "./components/Slidebar";
+import { Event } from "./pages/Event";
 
 const GET_LESSONS_QUERY = gql`
   query{
@@ -10,17 +15,14 @@ const GET_LESSONS_QUERY = gql`
     }
   }
 `
-function App() {
-  useEffect(() => {
-    client.query({
-      query: GET_LESSONS_QUERY,
-    }).then(response => {
-      console.log(response.data)
-    })
-  }, [])
+interface Lesson{
+  id: string;
+  title: string;
+}
 
-    return (
-    <h1 className = "text-2xl">hello word</h1>
+function App() {
+      return (
+      <Event />
   )
 }
 export default App
