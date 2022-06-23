@@ -4,8 +4,8 @@ import { Header } from "./components/Header";
 import { client } from "./lib/apollo"
 import { Lesson } from "./components/Lesson";
 import { Video } from "./components/Video";
-import { Slidebar } from "./components/Slidebar";
-import { Event } from "./pages/Event";
+import { Sidebar } from "./components/Sidebar";
+
 
 const GET_LESSONS_QUERY = gql`
   query{
@@ -22,7 +22,12 @@ interface Lesson{
 
 function App() {
       return (
-      <Event />
+      <div>
+        <Header />
+        <Sidebar />
+      </div>
+      
+
   )
 }
 export default App
