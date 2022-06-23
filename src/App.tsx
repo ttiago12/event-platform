@@ -1,33 +1,8 @@
-import { gql , useQuery} from "@apollo/client"
-import { useEffect } from "react"
-import { Header } from "./components/Header";
-import { client } from "./lib/apollo"
-import { Lesson } from "./components/Lesson";
-import { Video } from "./components/Video";
-import { Sidebar } from "./components/Sidebar";
-
-
-const GET_LESSONS_QUERY = gql`
-  query{
-    lessons{
-      id
-      title
-    }
-  }
-`
-interface Lesson{
-  id: string;
-  title: string;
-}
+import { Event } from "./pages/Event"
 
 function App() {
       return (
-      <div>
-        <Header />
-        <Sidebar />
-      </div>
-      
-
+        <Event />
   )
 }
 export default App
